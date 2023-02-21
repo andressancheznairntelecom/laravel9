@@ -3,23 +3,11 @@
 <h1>
     Edit Form
 </h1>
-<form action="{{ route('posts.update', $posts) }}" method="POST">
+
+
+<form action="{{ route('post.update', $post) }}" method="POST">
     @csrf @method('PATCH')
-    <label>
-        Title <br>
-        <input name="title" type="text"  value="{{ old('title', $posts->title) }}">
-        <br>
-        @error('title') 
-            <small style="color: red"> {{ $message }} </small>
-        @enderror
-    </label><br>
-    <label>
-        Body<br>
-        <textarea name="body">{{ old('title', $posts->title) }}</textarea><br>
-        @error('body')
-            <small style="color: red"> {{$message}} </small>
-        @enderror
-    </label><br>
+    @include('posts.form-fields')
     <button type="submit">Enviar</button>
 </form>
 <br>
