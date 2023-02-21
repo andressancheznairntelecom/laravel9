@@ -15,10 +15,9 @@ class PostController extends Controller
         return view ('posts.index', ['posts' => $posts]);
     }
 
-    public function show(Post $post)
-    {
+    public function show(Post $post){
         return view('posts.show', ['post' => $post]);
-    }
+}
 
     public function create() {
         return view('posts.create');
@@ -32,7 +31,7 @@ class PostController extends Controller
             'body' => ['required']
         ]);
 
-        
+
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
@@ -41,6 +40,26 @@ class PostController extends Controller
         session()->flash('status', 'Post creado');
     
         return to_route('posts.index');
+    }
+    
+    public function edit (Post $post) {
+        return view('posts.edit', ['posts' => $post]);
+    }
+
+    public function update(Request $request, Post $post) 
+    {
+        $request->validate([
+            'title' => ['required', 'min:4'],
+            'body' => ['required']
+        ]);
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        session()->flash('status', 'Post updated');
+    
+        return to_route('posts.show', $post);
     }
 
 }
