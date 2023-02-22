@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+<nav class="flex items-center justify-between flex-wrap bg-gray-700 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54"
             xmlns="http://www.w3.org/2000/svg">
@@ -18,17 +18,17 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-            <a href="{{ route('home') }}" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ request()->routeIs('home') ? 'text-white' :'text-teal-200' }}">
+            <a href="{{ route('home') }}" class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500 mr-4 {{ request()->routeIs('home') ? 'text-sky-500' :'text-white' }}">
                 Home
             </a>
-            <a href="{{ route('posts.index') }}" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ request()->routeIs('posts.*') ? 'text-white' :'text-teal-200' }}">
+            <a href="{{ route('posts.index') }}" class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500 mr-4 {{ request()->routeIs('posts.*') ? 'text-sky-500' : 'text-white' }}">
                 Blog
             </a>
             <a href="{{ route('about') }}"
-                class="block mt-4 lg:inline-block lg:mt-0 hover:text-white  mr-4 {{ request()->routeIs('about') ? 'text-white' :'text-teal-200' }}">
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500  mr-4 {{ request()->routeIs('about') ? 'text-sky-500' : 'text-white' }}">
                 About
             </a>
-            <a href="{{ route('contact') }}" class="block mt-4 lg:inline-block lg:mt-0  hover:text-white {{ request()->routeIs('contact') ? 'text-white' :'text-teal-200' }}">
+            <a href="{{ route('contact') }}" class="block mt-4 lg:inline-block lg:mt-0  hover:text-sky-500 {{ request()->routeIs('contact') ? 'text-sky-500' : 'text-white' }}">
                 Contact
             </a>
         </div>

@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.contact{
+    color: #fff;
+transition: all .3s;
+}
+
+.contact:hover {
+    color: rgb(0, 119, 255);
+    text-decoration: underline;
+}
+
+
+
+.sep {
+    color: #fff;
+}
+
