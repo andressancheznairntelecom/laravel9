@@ -20,19 +20,41 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-            <a href="{{ route('home') }}" class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500 mr-4 {{ request()->routeIs('home') ? 'text-sky-500' :'text-white' }}">
+            <a href="{{ route('home') }}"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500 mr-4 {{ request()->routeIs('home') ? 'text-sky-500' : 'text-white' }}">
                 Home
             </a>
-            <a href="{{ route('posts.index') }}" class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500 mr-4 {{ request()->routeIs('posts.*') ? 'text-sky-500' : 'text-white' }}">
+            <a href="{{ route('posts.index') }}"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500 mr-4 {{ request()->routeIs('posts.*') ? 'text-sky-500' : 'text-white' }}">
                 Blog
             </a>
             <a href="{{ route('about') }}"
                 class="block mt-4 lg:inline-block lg:mt-0 hover:text-sky-500  mr-4 {{ request()->routeIs('about') ? 'text-sky-500' : 'text-white' }}">
                 About
             </a>
-            <a href="{{ route('contact') }}" class="block mt-4 lg:inline-block lg:mt-0  hover:text-sky-500 {{ request()->routeIs('contact') ? 'text-sky-500' : 'text-white' }}">
+            <a href="{{ route('contact') }}"
+                class="block mt-4 lg:inline-block lg:mt-0  hover:text-sky-500 {{ request()->routeIs('contact') ? 'text-sky-500' : 'text-white' }}">
                 Contact
             </a>
         </div>
+        @guest
+            <div>
+                <a href="{{ route('register') }}"
+                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white  hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 {{ request()->routeIs('register') ? 'text-sky-500' : 'text-white' }}">Register</a>
+                <a href="{{ route('login') }}"
+                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 {{ request()->routeIs('login') ? 'text-sky-500' : 'text-white' }}">Login</a>
+            </div>
+        @endguest
+        @auth
+            <p class="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
+                {{ Auth::user()->name }}
+            </p>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <a onclick="this.closest('form').submit()"
+                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 "
+                    href="#">Logout</a>
+            </form>
+        @endauth
     </div>
 </nav>
