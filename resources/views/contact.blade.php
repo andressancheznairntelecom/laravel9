@@ -1,3 +1,4 @@
 <x-layouts.app title="Contacto">
-    <h1>Contacto</h1>
+    <div class="text-center p-2">Contacto</div>
+
 </x-layouts.app>
