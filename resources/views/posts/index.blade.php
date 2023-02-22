@@ -3,7 +3,7 @@
     <header class="px-6 py-4 space-y-2 text-center">
         <h1 class="font-bold text-3xl dark:text-sky-500">Blog</h1>
         <br>
-        <a class="bg-gray-700 hover:bg-black text-white font-bold py-2 px-4 rounded"
+        <a class="bg-gray-700 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded"
             href="{{ route('posts.create') }}">Create new post</a>
     </header>
 

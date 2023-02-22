@@ -12,7 +12,9 @@
 
 @if (session())
 <div class="status">
-    {{ session('status') }}
+    <p class="text-white">
+        {{ session('status') }}
+    </p>
 </div>
 @endif
 

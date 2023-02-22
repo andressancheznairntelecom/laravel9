@@ -9,11 +9,12 @@
     <form action="{{ route('posts.store') }}" method="POST">
         @csrf
         @include('posts.form-fields')
-    
-        <button type="submit">Enviar</button>
+        <div class="px-6 py-4 space-y-2 text-center">
+            <a class="bg-gray-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" href="{{ route('posts.index') }}">Volver al blog</a>
+            <button class="bg-gray-700 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded" type="submit">Enviar</button>
+        </div>
     </form>
-    <br>
-    <a href="{{ route('posts.index') }}">Volver al blog</a>
+
         
 </div>
 </body>
