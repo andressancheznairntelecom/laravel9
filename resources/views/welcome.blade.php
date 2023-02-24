@@ -7,9 +7,13 @@
     </body>
     <div class="container mx- px-40">
         <p class="text-white">
-            Authenticated User: {{ Auth::user()->name }}
-            <br>
-            Email: {{ Auth::user()->email }}
+
+            @auth
+                Authenticated User: {{ Auth::user()->name }}
+                <br>
+                Email: {{ Auth::user()->email }}
+            @endauth
+
         </p>
     </div>
 
